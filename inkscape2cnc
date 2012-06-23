@@ -1,0 +1,36 @@
+#!/bin/sh
+
+infile=$1
+outfile="$HOME/`basename $1 .ngc`_laser.ngc"
+echo Outputting to $outfile
+
+
+cat >"$outfile" <<EOF
+G94
+F1400
+G97
+S100
+G40
+G21
+EOF
+
+
+#	s/F.*//g;
+#	s/G00/G01/;
+#sed '	s/[(].*[)]//g;
+sed '	s/G0.* Z5.*/M63 P0/gi;
+	s/G0.* Z\[5.*/M63 P0/gi;
+	s/G01 Z-.*/M62 P0/gi;
+	s/G01 Z\[-.*/M62 P0/gi;
+	s/G20//;
+	s/Z\[[^]]*\]//g;
+	s/Z[^ ]*//g;
+	s/\%//;
+	s/^[	 ]*//;' "$infile" | \
+grep -v '^$' >>"$outfile"
+
+
+cat >>"$outfile" <<EOF
+M65 P0
+G01
+EOF
