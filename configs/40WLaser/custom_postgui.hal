@@ -1,0 +1,36 @@
+# Include your customized HAL commands here
+# The commands in this file are run after the AXIS GUI (including PyVCP panel) starts
+
+# **** Setup of spindle speed display using pyvcp -START ****
+# **** Use COMMANDED spindle velocity from EMC because no spindle encoder was specified
+# **** COMANDED velocity is signed so we use absolute component (abs.0) to remove sign
+
+loadrt abs
+addf abs.0 servo-thread
+net laser-freq-speed => abs.0.in
+
+net laser-freq-duty-cycle <= abs.0.is-negative => pyvcp.duty-cycle-mode
+net laser-freq-ppi <= abs.0.is-positive => pyvcp.ppi-mode
+net laser-freq-abs <= abs.0.out => pyvcp.spindle
+net laser-power-cmd => pyvcp.power
+
+net laser-air-assist halui.mist.is-on => pyvcp.air-assist
+net laser-exhaust => pyvcp.laser-exhaust
+net laser-master => pyvcp.laser-master
+net laser-raster => pyvcp.laser-raster
+net laser-dout => pyvcp.laser-dout
+net laser-continuous <= laserfreq.0.continuous => pyvcp.laser-continuous
+net laser-magic-z => pyvcp.laser-magic-z
+
+net button-z-to-zero pyvcp.z-to-zero => halui.mdi-command-00
+net button-xy-touchoff pyvcp.xy-touchoff => halui.mdi-command-01
+net button-laser-test-fire pyvcp.laser-test-fire => halui.mdi-command-05
+net button-move-origin pyvcp.move-origin => halui.mdi-command-06
+
+loadrt time
+addf time.0 servo-thread
+net cycle-timer time.0.start <= halui.program.is-running
+net cycle-seconds pyvcp.time-seconds <= time.0.seconds
+net cycle-minutes pyvcp.time-minutes <= time.0.minutes
+net cycle-hours pyvcp.time-hours <= time.0.hours
+

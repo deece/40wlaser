@@ -21,7 +21,7 @@
   <property name="customhal" type="int" value="1"/>
   <property name="digitsin" type="float" value="15.0"/>
   <property name="digitsout" type="float" value="15.0"/>
-  <property name="dirhold" type="float" value="3000.0"/>
+  <property name="dirhold" type="float" value="1500.0"/>
   <property name="dirsetup" type="float" value="5000.0"/>
   <property name="drivertype" type="string" value="other"/>
   <property name="floatsin" type="float" value="10.0"/>
@@ -33,8 +33,8 @@
   <property name="ladderconnect" type="bool" value="True"/>
   <property name="ladderhaltype" type="int" value="0"/>
   <property name="laddername" type="string" value="custom.clp"/>
-  <property name="latency" type="float" value="4900.0"/>
-  <property name="machinename" type="string" value="40Wlaser-stepconf"/>
+  <property name="latency" type="float" value="19000.0"/>
+  <property name="machinename" type="string" value="40Wlaser"/>
   <property name="manualtoolchange" type="bool" value="False"/>
   <property name="md5sums" type="eval" value="[]"/>
   <property name="modbus" type="bool" value="False"/>
@@ -141,38 +141,38 @@
   <property name="spindlepwm2" type="float" value="0.8"/>
   <property name="spindlespeed1" type="int" value="100"/>
   <property name="spindlespeed2" type="int" value="800"/>
-  <property name="stepspace" type="float" value="3000.0"/>
-  <property name="steptime" type="float" value="3000.0"/>
+  <property name="stepspace" type="float" value="1500.0"/>
+  <property name="steptime" type="float" value="1500.0"/>
   <property name="tempexists" type="int" value="0"/>
   <property name="units" type="int" value="1"/>
   <property name="usespindleatspeed" type="bool" value="False"/>
   <property name="xhomepos" type="float" value="4.0"/>
   <property name="xhomesw" type="float" value="0.0"/>
-  <property name="xhomevel" type="float" value="400.0"/>
+  <property name="xhomevel" type="float" value="50.0"/>
   <property name="xlatchdir" type="int" value="0"/>
   <property name="xleadscrew" type="float" value="101.6"/>
-  <property name="xmaxacc" type="float" value="32000.0"/>
+  <property name="xmaxacc" type="float" value="400.0"/>
   <property name="xmaxlim" type="float" value="250.0"/>
-  <property name="xmaxvel" type="float" value="1990.0"/>
-  <property name="xmicrostep" type="float" value="16.0"/>
+  <property name="xmaxvel" type="float" value="400.0"/>
+  <property name="xmicrostep" type="float" value="128.0"/>
   <property name="xminlim" type="float" value="0.0"/>
   <property name="xpulleyden" type="float" value="1.0"/>
   <property name="xpulleynum" type="float" value="1.0"/>
-  <property name="xscale" type="float" value="31.4960629921"/>
+  <property name="xscale" type="float" value="251.968503937"/>
   <property name="xsteprev" type="float" value="200.0"/>
   <property name="yhomepos" type="float" value="210.0"/>
   <property name="yhomesw" type="float" value="210.0"/>
-  <property name="yhomevel" type="float" value="400.0"/>
+  <property name="yhomevel" type="float" value="20.0"/>
   <property name="ylatchdir" type="int" value="0"/>
   <property name="yleadscrew" type="float" value="101.6"/>
-  <property name="ymaxacc" type="float" value="32000.0"/>
+  <property name="ymaxacc" type="float" value="400.0"/>
   <property name="ymaxlim" type="float" value="210.0"/>
-  <property name="ymaxvel" type="float" value="1990.0"/>
-  <property name="ymicrostep" type="float" value="8.0"/>
+  <property name="ymaxvel" type="float" value="400.0"/>
+  <property name="ymicrostep" type="float" value="64.0"/>
   <property name="yminlim" type="float" value="0.0"/>
   <property name="ypulleyden" type="float" value="1.0"/>
   <property name="ypulleynum" type="float" value="1.0"/>
-  <property name="yscale" type="float" value="31.4960629921"/>
+  <property name="yscale" type="float" value="251.968503937"/>
   <property name="ysteprev" type="float" value="400.0"/>
   <property name="zhomepos" type="float" value="0.0"/>
   <property name="zhomesw" type="float" value="0.0"/>

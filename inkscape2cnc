@@ -1,7 +1,7 @@
 #!/bin/sh
 
 infile=$1
-outfile="$HOME/`basename $1 .ngc`_laser.ngc"
+outfile="$HOME/linuxcnc/nc_files/`basename $1 .ngc`_laser.ngc"
 echo Outputting to $outfile
 
 
@@ -15,8 +15,6 @@ G21
 EOF
 
 
-#	s/F.*//g;
-#	s/G00/G01/;
 #sed '	s/[(].*[)]//g;
 sed '	s/G0.* Z5.*/M63 P0/gi;
 	s/G0.* Z\[5.*/M63 P0/gi;
@@ -26,6 +24,7 @@ sed '	s/G0.* Z5.*/M63 P0/gi;
 	s/Z\[[^]]*\]//g;
 	s/Z[^ ]*//g;
 	s/\%//;
+	s/G00 X0.0000 Y0.0000//;
 	s/^[	 ]*//;' "$infile" | \
 grep -v '^$' >>"$outfile"
 

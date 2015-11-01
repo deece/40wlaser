@@ -1,0 +1,23 @@
+%
+( square )
+G20 G40 G49
+G17
+G64 P0.001
+M7 (air assist on)
+M65 P0 (laser off now)
+G0 Z0 (magic z off)
+M4 S40.00 (duty cycle)
+M68 E0 Q100.00 (pwm power now)
+( Profile 1 )
+G0 X0.0000 Y0.0000
+M62 P0 (laser on motion)
+G1 X0.0000 Y-2.0000 F7.000
+G1 X2.0000 Y-2.0000
+G1 X2.0000 Y0.0000
+G1 X0.0000 Y0.0000
+M65 P0 (laser off now)
+G0 Z0 (magic z off)
+M9 (air assist off)
+G0 X0.0000 Y0.0000
+M2
+%

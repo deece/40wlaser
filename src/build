@@ -1,0 +1,6 @@
+#!/bin/sh -x
+
+sudo halcompile --install millkins.c
+sudo halcompile --install laserfreq.comp
+sudo halcompile --install laserraster.comp
+

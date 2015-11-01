@@ -59,7 +59,7 @@ sub outputRow($$$) {
     my $start = $ARG[1];
     my $end = $ARG[2];
 
-    printf (OUTPUT "G00 X%.4f Y%.4f \n", $start * $pixelSize, $row * $pixelSize);
+    printf (OUTPUT "G01 X%.4f Y%.4f \n", $start * $pixelSize, $row * $pixelSize);
     penDown();
     printf (OUTPUT "G01 X%.4f Y%.4f \n", $end * $pixelSize, $row * $pixelSize);
     penUp();
