@@ -1,9 +1,0 @@
-<pyvcp>
-    <label>
-        <text>"Laser Power (%):"</text>
-    </label>
-    <bar>
-        <halpin>"laser-power"</halpin>
-        <max_>100</max_>
-    </bar>
-</pyvcp>
